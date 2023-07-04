@@ -1,5 +1,4 @@
 import { Box, useBreakpointValue, Stack, Heading, Text, Container, Image, Button, Flex } from "@chakra-ui/react";
-
 import Slider from "react-slick";
 import FirstImageOnboarding from "../../assets/onboarding/first-image.jpg";
 import SecondImageOnboarding from "../../assets/onboarding/second-image.jpg";

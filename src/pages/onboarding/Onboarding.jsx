@@ -1,8 +1,8 @@
 import { Box, useBreakpointValue, Stack, Heading, Text, Container, Image, Button, Flex } from "@chakra-ui/react";
 import Slider from "react-slick";
-import FirstImageOnboarding from "../../assets/onboarding/first-image.jpg";
-import SecondImageOnboarding from "../../assets/onboarding/second-image.jpg";
-import ThirdImageOnboarding from "../../assets/onboarding/third-image.jpg";
+import firstImageOnboarding from "../../assets/onboarding/first-image.jpg";
+import secondImageOnboarding from "../../assets/onboarding/second-image.jpg";
+import thirdImageOnboarding from "../../assets/onboarding/third-image.jpg";
 import Logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 
@@ -30,19 +30,19 @@ export default function Onboarding() {
       brand: "Teegolf",
       title: "Reserva tu green fee online.",
       text: "Puedes reservar tu partida en tan solo tres simples pasos.",
-      image: FirstImageOnboarding,
+      image: firstImageOnboarding,
     },
     {
       brand: "Teegolf",
       title: "Decide si quieres ir a jugar.",
       text: "Mira el tiempo, el estado del campo y su diseño en un solo lugar, de forma integrada.",
-      image: SecondImageOnboarding,
+      image: secondImageOnboarding,
     },
     {
       brand: "Teegolf",
       title: "Descubre con quién  jugarás tu partida.",
       text: "Mira con quién irás a jugar tu próxima partida antes de llegar al campo.",
-      image: ThirdImageOnboarding,
+      image: thirdImageOnboarding,
     },
   ];
 

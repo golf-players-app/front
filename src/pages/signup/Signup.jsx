@@ -6,14 +6,16 @@ import ThirdPage from "../../components/signup/thirdPage";
 import FourPage from "../../components/signup/fourPage";
 import FivePage from "../../components/signup/fivePage";
 import playerService from "../../services/players.service";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
   const form = usePlayerForm();
+  const navigate = useNavigate();
 
   const handleSubmit = async (player) => {
-    console.log(player);
     try {
-      await playerService.create(player);
+      const newPlayer = await playerService.create(player);
+      navigate(`/federation/${newPlayer.data._id}`);
     } catch (error) {
       console.log(error);
     }

@@ -30,20 +30,20 @@ export default function Login() {
         </Box>
         <Spacer />
         <Box>
-          {/* <Form>*/}
-          <FormControl>
-            <FormLabel color={"#FAFAFA"}>Usuario</FormLabel>
-            <Input backgroundColor={"#FAFAFA"} type="email" />
-          </FormControl>
-          <FormControl mt={"16px"}>
-            <FormLabel color={"#FAFAFA"}>Contraseña</FormLabel>
-            <Input backgroundColor={"#FAFAFA"} type="password" />
-          </FormControl>
+          <Box as="form" onSubmit={handleSubmit}>
+            <FormControl>
+              <FormLabel color={"#FAFAFA"}>Usuario</FormLabel>
+              <Input backgroundColor={"#FAFAFA"} type="email" />
+            </FormControl>
+            <FormControl mt={"16px"}>
+              <FormLabel color={"#FAFAFA"}>Contraseña</FormLabel>
+              <Input backgroundColor={"#FAFAFA"} type="password" />
+            </FormControl>
 
-          <Button type="submit" w={"full"} mt={"40px"}>
-            Log in
-          </Button>
-          {/* </Form>  */}
+            <Button type="submit" w={"full"} mt={"40px"}>
+              Log in
+            </Button>
+          </Box>
 
           <Link>
             <Text textAlign={"center"} color={"#FAFAFA"}>

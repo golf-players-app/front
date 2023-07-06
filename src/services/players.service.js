@@ -3,7 +3,7 @@ import axios from "axios";
 class PlayerService {
   constructor() {
     this.api = axios.create({
-      baseURL: `${import.meta.env.VITE_API_URL}/players`,
+      baseURL: `${import.meta.env.VITE_API_URL_PLAYER}/players`,
     });
   }
 
@@ -23,9 +23,9 @@ class PlayerService {
   //   return this.api.get(`/`);
   // }
 
-  // getOne(id) {
-  //   return this.api.get(`/${id}`);
-  // }
+  getOne(id) {
+    return this.api.get(`/${id}`);
+  }
 }
 
 const playerService = new PlayerService();

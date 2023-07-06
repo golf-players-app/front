@@ -5,6 +5,7 @@ import Onboarding from "./pages/onboarding/onboarding";
 import Login from "./pages/login/Login";
 import Welcome from "./pages/welcome/welcome";
 import Signup from "./pages/signup/Signup";
+import Federation from "./pages/federation/Federation";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/federation/:id" element={<Federation />} />
       </Routes>
     </Box>
   );

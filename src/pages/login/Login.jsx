@@ -1,9 +1,33 @@
+import { useContext, useState } from "react";
 import { Box, Button, Flex, FormControl, FormLabel, Heading, Input, Spacer, Text } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import backgroundImage from "../../assets/login/background-image.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import playerService from "../../services/players.service";
+import { AuthContext } from "../../context/auth.context";
 
 export default function Login() {
+  const [data, setData] = useState({});
+  const navigate = useNavigate();
+  const { authenticate, storeToken } = useContext(AuthContext);
+  const handleChange = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const player = await playerService.login(data);
+      console.log(player.data);
+      storeToken(player.data.authToken);
+      authenticate();
+      navigate(`/`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Box
       height={"100vh"}
@@ -33,11 +57,17 @@ export default function Login() {
           <Box as="form" onSubmit={handleSubmit}>
             <FormControl>
               <FormLabel color={"#FAFAFA"}>Usuario</FormLabel>
-              <Input backgroundColor={"#FAFAFA"} type="email" />
+              <Input backgroundColor={"#FAFAFA"} type="email" name="email" value={data.email} onChange={handleChange} />
             </FormControl>
             <FormControl mt={"16px"}>
               <FormLabel color={"#FAFAFA"}>Contraseña</FormLabel>
-              <Input backgroundColor={"#FAFAFA"} type="password" />
+              <Input
+                backgroundColor={"#FAFAFA"}
+                type="password"
+                name="password"
+                value={data.password}
+                onChange={handleChange}
+              />
             </FormControl>
 
             <Button type="submit" w={"full"} mt={"40px"}>

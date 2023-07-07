@@ -11,13 +11,15 @@ class PlayerService {
     return this.api.post("/signup", data);
   }
 
-  // edit(id, data) {
-  //   return this.api.put(`/${id}`, data);
-  // }
+  login(data) {
+    return this.api.post("/login", data);
+  }
 
-  // delete(id) {
-  //   return this.api.delete(`/${id}`);
-  // }
+  verify(token) {
+    return this.api.get(`/verify`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+  }
 
   // getAll() {
   //   return this.api.get(`/`);

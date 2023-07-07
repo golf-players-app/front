@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Heading, Image, Spacer } from "@chakra-ui/react";
-
 import Logo from "../../assets/logo.svg";
 import welcomeImage from "../../assets/welcome/welcome.jpg";
+import { Link } from "react-router-dom";
 
 export default function Welcome() {
   return (
@@ -27,18 +27,16 @@ export default function Welcome() {
         </Box>
         <Spacer />
         <Box>
-          <Button type="submit" w={"full"} mt={"16px"}>
-            Continuar con email
-          </Button>
-          <Button type="submit" w={"full"} mt={"16px"}>
-            Continuar con Apple
-          </Button>
-          <Button type="submit" w={"full"} mt={"16px"}>
-            Continuar con Google
-          </Button>
-          <Button type="submit" w={"full"} mt={"16px"}>
-            Continuar con Facebook
-          </Button>
+          <Link to={"/signup"}>
+            <Button w={"full"} mt={"16px"}>
+              Registrarse
+            </Button>
+          </Link>
+          <Link to={"/login"}>
+            <Button w={"full"} mt={"16px"}>
+              Iniciar sesión
+            </Button>
+          </Link>
         </Box>
       </Flex>
     </Box>

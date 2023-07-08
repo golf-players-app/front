@@ -7,6 +7,7 @@ import FourPage from "../../components/signup/fourPage";
 import FivePage from "../../components/signup/fivePage";
 import playerService from "../../services/players.service";
 import { useNavigate } from "react-router-dom";
+import SixPage from "./SelectClub";
 
 export default function Signup() {
   const form = usePlayerForm();

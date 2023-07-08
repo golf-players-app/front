@@ -5,6 +5,7 @@ import secondImageOnboarding from "../../assets/onboarding/second-image.jpg";
 import thirdImageOnboarding from "../../assets/onboarding/third-image.jpg";
 import Logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
+import { useTheme } from "@chakra-ui/react";
 
 // Settings for the slider
 const settings = {
@@ -18,6 +19,7 @@ const settings = {
 };
 
 export default function Onboarding() {
+  const theme = useTheme();
   // These are the breakpoints which changes the position of the
   // buttons as the screen size changes
   const top = useBreakpointValue({ base: "90%", md: "50%" });
@@ -69,12 +71,12 @@ export default function Onboarding() {
         <Flex justifyContent={"space-between"} alignItems={"center"} alignContent={"center"}>
           <Box pl="10%">
             <Link>
-              <Text color={"#FAFAFA"} as="u" fontSize={"xs"}>
+              <Text color={"main.whiteBall"} as="u" fontSize={"xs"}>
                 Omitir
               </Text>
             </Link>
           </Box>
-          <Button pr={"20%"} pl={"20%"} backgroundColor={"#FAFAFA"} color={"#02735B"} fontSize={"md"}>
+          <Button pr={"20%"} pl={"20%"} backgroundColor={"main.whiteBall"} color={"main.golfieGreen"} fontSize={"md"}>
             Continuar
           </Button>
         </Flex>
@@ -86,7 +88,7 @@ export default function Onboarding() {
             key={index}
             height={"4xl"}
             position="relative"
-            background={`linear-gradient(0deg, #02735BB2, #02735BB2),url(${card.image})`}
+            background={`linear-gradient(0deg, ${theme.colors.main.golfieGreenOpacity}, ${theme.colors.main.golfieGreenOpacity}),url(${card.image})`}
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
@@ -94,10 +96,10 @@ export default function Onboarding() {
             {/* Customize caption */}
             <Container size="container.ld" height="full" position="relative">
               <Stack spacing={6} w={"90%"} maxW={"lg"} position="absolute" top="10%">
-                <Heading fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }} color={"#FAFAFA"}>
+                <Heading fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }} color={"main.whiteBall"}>
                   {card.title}
                 </Heading>
-                <Text fontSize={{ base: "md", lg: "lg" }} color={"#FAFAFA"}>
+                <Text fontSize={{ base: "md", lg: "lg" }} color={"main.whiteBall"}>
                   {card.text}
                 </Text>
               </Stack>

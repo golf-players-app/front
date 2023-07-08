@@ -5,6 +5,7 @@ import Amistoso from "../../assets/signup/amistoso.png";
 
 export default function FivePage() {
   const { previousStep } = useWizard();
+  const { nextStep } = useWizard();
   const { register } = usePlayerForm();
   return (
     <>

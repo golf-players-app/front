@@ -7,6 +7,7 @@ import Welcome from "./pages/welcome/welcome";
 import Signup from "./pages/signup/Signup";
 import SelectClub from "./pages/signup/SelectClub";
 import Federation from "./pages/federation/Federation";
+import Round from "./pages/round/round";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/select-club/:id" element={<SelectClub />} />
         <Route path="/federation/:id" element={<Federation />} />
+        <Route path="/rounds" element={<Round />} />
       </Routes>
     </Box>
   );

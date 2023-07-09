@@ -20,7 +20,6 @@ export default function Login() {
     e.preventDefault();
     try {
       const player = await playerService.login(data);
-      console.log(player.data);
       storeToken(player.data.authToken);
       authenticate();
       navigate(`/`);

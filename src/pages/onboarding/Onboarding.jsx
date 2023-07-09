@@ -1,10 +1,21 @@
-import { Box, useBreakpointValue, Stack, Heading, Text, Container, Image, Button, Flex } from "@chakra-ui/react";
+import {
+  Box,
+  useBreakpointValue,
+  Stack,
+  Heading,
+  Text,
+  Container,
+  Image,
+  Button,
+  Flex,
+  Center,
+} from "@chakra-ui/react";
 import Slider from "react-slick";
 import firstImageOnboarding from "../../assets/onboarding/first-image.jpg";
 import secondImageOnboarding from "../../assets/onboarding/second-image.jpg";
 import thirdImageOnboarding from "../../assets/onboarding/third-image.jpg";
 import Logo from "../../assets/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useTheme } from "@chakra-ui/react";
 
 // Settings for the slider
@@ -47,6 +58,7 @@ export default function Onboarding() {
       image: thirdImageOnboarding,
     },
   ];
+  const navigate = useNavigate();
 
   return (
     <Box position={"relative"} height={"100vh"} width={"full"} overflow={"hidden"}>
@@ -66,21 +78,23 @@ export default function Onboarding() {
       <Box position="absolute" top={"5%"} left={"40%"} zIndex={2}>
         <Image src={Logo} alt="Logo" />
       </Box>
-      {/* Buttons */}
-      <Box position="absolute" top={top} left={side} zIndex={2} w={"90%"}>
-        <Flex justifyContent={"space-between"} alignItems={"center"} alignContent={"center"}>
-          <Box pl="10%">
-            <Link>
-              <Text color={"main.whiteBall"} as="u" fontSize={"xs"}>
-                Omitir
-              </Text>
-            </Link>
-          </Box>
-          <Button pr={"20%"} pl={"20%"} backgroundColor={"main.whiteBall"} color={"main.golfieGreen"} fontSize={"md"}>
-            Continuar
-          </Button>
-        </Flex>
-      </Box>
+      {/* Button */}
+      <Center>
+        <Box position="absolute" top={top} zIndex={2} w={"90%"}>
+          <Center>
+            <Button
+              pr={"20%"}
+              pl={"20%"}
+              backgroundColor={"main.whiteBall"}
+              color={"main.golfieGreen"}
+              fontSize={"md"}
+              onClick={() => navigate(`/`)}
+            >
+              Continuar
+            </Button>
+          </Center>
+        </Box>
+      </Center>
       {/* Slider */}
       <Slider {...settings}>
         {cards.map((card, index) => (

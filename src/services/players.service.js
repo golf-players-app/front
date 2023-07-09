@@ -21,6 +21,10 @@ class PlayerService {
     });
   }
 
+  update(id, data) {
+    return this.api.put(`/${id}`, data);
+  }
+
   // getAll() {
   //   return this.api.get(`/`);
   // }

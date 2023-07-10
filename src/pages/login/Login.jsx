@@ -22,7 +22,7 @@ export default function Login() {
       const player = await playerService.login(data);
       storeToken(player.data.authToken);
       authenticate();
-      navigate(`/`);
+      navigate(`/rounds`);
     } catch (error) {
       console.log(error);
     }

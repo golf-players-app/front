@@ -8,7 +8,7 @@ class CourseService {
   }
 
   getCourse(id) {
-    return this.api.get("/:id");
+    return this.api.get(`/${id}`);
   }
 }
 

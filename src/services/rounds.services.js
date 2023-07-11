@@ -13,8 +13,10 @@ class RoundService {
     });
   }
 
-  addPlayer(id) {
-    return this.api.post(`/player/${id}`);
+  addPlayer(token, id) {
+    return this.api.post(`/player/${id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
   }
 }
 

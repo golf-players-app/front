@@ -1,21 +1,10 @@
-import {
-  Box,
-  useBreakpointValue,
-  Stack,
-  Heading,
-  Text,
-  Container,
-  Image,
-  Button,
-  Flex,
-  Center,
-} from "@chakra-ui/react";
+import { Box, useBreakpointValue, Stack, Heading, Text, Container, Image, Button, Center } from "@chakra-ui/react";
 import Slider from "react-slick";
 import firstImageOnboarding from "../../assets/onboarding/first-image.jpg";
 import secondImageOnboarding from "../../assets/onboarding/second-image.jpg";
 import thirdImageOnboarding from "../../assets/onboarding/third-image.jpg";
 import Logo from "../../assets/logo.svg";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useTheme } from "@chakra-ui/react";
 
 // Settings for the slider
@@ -75,7 +64,7 @@ export default function Onboarding() {
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
       {/* Brand */}
-      <Box position="absolute" top={"5%"} left={"40%"} zIndex={2}>
+      <Box position="absolute" left={"40%"} pt={"48px"} zIndex={2}>
         <Image src={Logo} alt="Logo" />
       </Box>
       {/* Button */}
@@ -83,14 +72,15 @@ export default function Onboarding() {
         <Box position="absolute" top={top} zIndex={2} w={"90%"}>
           <Center>
             <Button
+              w={"full"}
               pr={"20%"}
               pl={"20%"}
               backgroundColor={"main.whiteBall"}
-              color={"main.golfieGreen"}
-              fontSize={"md"}
-              onClick={() => navigate(`/`)}
+              onClick={() => navigate(`/welcome`)}
             >
-              Continuar
+              <Text textStyle={"pmb"} color={"main.golfieGreen"}>
+                Continuar
+              </Text>
             </Button>
           </Center>
         </Box>
@@ -110,10 +100,10 @@ export default function Onboarding() {
             {/* Customize caption */}
             <Container size="container.ld" height="full" position="relative">
               <Stack spacing={6} w={"90%"} maxW={"lg"} position="absolute" top="10%">
-                <Heading fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }} color={"main.whiteBall"}>
+                <Heading fontSize={"36px"} fontWeight={500} color={"main.whiteBall"}>
                   {card.title}
                 </Heading>
-                <Text fontSize={{ base: "md", lg: "lg" }} color={"main.whiteBall"}>
+                <Text textStyle={"pmr"} color={"main.whiteBall"}>
                   {card.text}
                 </Text>
               </Stack>

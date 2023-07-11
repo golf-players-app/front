@@ -6,6 +6,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { AuthContextWrapper } from "./context/auth.context.jsx";
 import { theme } from "./utils/extendTheme.js";
+import "@fontsource/lora";
+import "@fontsource/manrope";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>

@@ -13,9 +13,9 @@ function App() {
   return (
     <Box>
       <Routes>
-        <Route path="/onboarding" element={<Onboarding />} />
+        <Route path="/" element={<Onboarding />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Welcome />} />
+        <Route path="/welcome" element={<Welcome />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/select-club/:id" element={<SelectClub />} />
         <Route path="/federation/:id" element={<Federation />} />

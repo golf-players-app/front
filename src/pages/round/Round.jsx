@@ -17,7 +17,7 @@ export default function Round() {
   }, []);
 
   const handleClick = async (id) => {
-    await roundService.addPlayer(token, id);
+    await roundService.addPlayer(id);
   };
 
   const renderCourses = () => {

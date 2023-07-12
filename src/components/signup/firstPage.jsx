@@ -27,7 +27,7 @@ export default function FirstPage() {
       <Flex width={"full"} height={"full"} flexDirection={"column"} pl={"5%"} pr={"5%"}>
         <Flex alignItems={"center"} pb={"12px"}>
           <IconButton onClick={() => navigate("/welcome")} backgroundColor={"main.whiteBall"}>
-            <Icon as={leftArrow} color={"main.golfieGreen"} h={"24px"} w={"24px"} />
+            <Icon as={leftArrow} stroke={"main.golfieGreen"} h={"24px"} w={"24px"} />
           </IconButton>
           <Heading fontSize={"28px"} fontWeight={500} color={"main.golfieGreen"}>
             Crea tu cuenta

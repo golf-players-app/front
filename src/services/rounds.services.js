@@ -17,10 +17,8 @@ class RoundService {
     });
   }
 
-  getRounds(token) {
-    return this.api.get("/", {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+  getRounds() {
+    return this.api.get("/");
   }
 
   addPlayer(id) {

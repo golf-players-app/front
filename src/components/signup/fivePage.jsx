@@ -10,17 +10,17 @@ import {
   Image,
   Radio,
   RadioGroup,
+  Spacer,
   Stack,
   Text,
 } from "@chakra-ui/react";
 import { usePlayerForm } from "../../pages/signup/usePlayerForm";
 import { useWizard } from "react-use-wizard";
 import Amistoso from "../../assets/signup/amistoso.png";
-import { leftArrow, amistoso } from "../../utils/icons";
+import { leftArrow, amistoso, competitivo, ambos } from "../../utils/icons";
 
 export default function FivePage() {
   const { previousStep } = useWizard();
-  const { nextStep } = useWizard();
   const { register } = usePlayerForm();
   return (
     <Box height={"100vh"} width={"full"} pt={"24px"} pb={"24px"}>
@@ -30,34 +30,73 @@ export default function FivePage() {
             <Icon as={leftArrow} stroke={"main.golfieGreen"} h={"24px"} w={"24px"} />
           </IconButton>
           <Heading fontSize={"28px"} fontWeight={500} color={"main.golfieGreen"}>
-            Cuenta un poco acerca de ti
+            ¿Cómo prefieres jugar tus partidas?
           </Heading>
         </Flex>
         <FormControl>
-          <FormLabel>Tipo de juego</FormLabel>
-          <RadioGroup>
-            <Stack direction="row">
-              <Flex flexDirection={"column"} alignItems={"center"}>
-                <Icon as={amistoso} w={"88.79px"} h={"130.79px"} />
-                <Text>Amistoso</Text>
-                <Radio value="Amistoso" {...register("gamePreference")}></Radio>{" "}
-              </Flex>
-              <Flex flexDirection={"column"} alignItems={"center"}>
-                <Image src={Amistoso} />
-                <Text>Competitivo</Text>
-                <Radio value="Competitivo" {...register("gamePreference")}></Radio>
-              </Flex>
-              <Flex flexDirection={"column"} alignItems={"center"}>
-                <Image src={Amistoso} />
-                <Text>Ambos</Text>
-                <Radio value="Ambos" {...register("gamePreference")}></Radio>
+          <FormLabel>Te ayudaremos a que encuentres jugadores con tus mismas preferencias de juego.</FormLabel>
+          <RadioGroup mt={"12px"}>
+            <Stack>
+              <Flex justifyContent={"space-between"}>
+                <Box border="1px" borderColor="#B2B2B2" borderRadius="8px" w="110px">
+                  <Flex
+                    flexDirection={"column"}
+                    alignItems={"center"}
+                    pt="8px"
+                    pb="8px"
+                    pl="16px"
+                    pr="16px"
+                    m="1px"
+                    gap="3"
+                  >
+                    <Icon as={amistoso} w={"88.79px"} h={"151.23px"} />
+                    <Text>Amistoso</Text>
+                    <Radio value="Amistoso" colorScheme="green" {...register("gamePreference")}></Radio>
+                  </Flex>
+                </Box>
+                <Box border="1px" borderColor="#B2B2B2" borderRadius="8px" w="110px">
+                  <Flex
+                    flexDirection={"column"}
+                    alignItems={"center"}
+                    pt="8px"
+                    pb="8px"
+                    pl="16px"
+                    pr="16px"
+                    m="1px"
+                    gap="3"
+                  >
+                    <Icon as={competitivo} w={"74.49px"} h={"151.23px"} />
+                    <Text>Competitivo</Text>
+                    <Radio value="Competitivo" colorScheme="green" {...register("gamePreference")}></Radio>
+                  </Flex>
+                </Box>
+                <Box border="1px" borderColor="#B2B2B2" borderRadius="8px" w="110px">
+                  <Flex
+                    flexDirection={"column"}
+                    alignItems={"center"}
+                    pt="8px"
+                    pb="8px"
+                    pl="16px"
+                    pr="16px"
+                    m="1px"
+                    gap="3"
+                  >
+                    <Icon as={ambos} w={"65.07px"} h={"151.23px"} />
+                    <Text>Ambos</Text>
+                    <Radio value="Ambos" colorScheme="green" {...register("gamePreference")}></Radio>
+                  </Flex>
+                </Box>
               </Flex>
             </Stack>
           </RadioGroup>
         </FormControl>
+        <Spacer />
         <Stack>
-          <Button type="submit">Submit</Button>
-          <Button onClick={previousStep}>Back</Button>
+          <Button type="submit" w={"full"} mt={"16px"} backgroundColor={"main.golfieGreen"}>
+            <Text textStyle={"pmb"} color={"main.whiteBall"}>
+              Submit
+            </Text>
+          </Button>
         </Stack>
       </Flex>
     </Box>

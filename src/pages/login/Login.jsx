@@ -1,14 +1,29 @@
 import { useContext, useState } from "react";
-import { Box, Button, Flex, FormControl, FormLabel, Heading, Input, Spacer, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  FormControl,
+  FormLabel,
+  Heading,
+  Icon,
+  IconButton,
+  Input,
+  Spacer,
+  Text,
+  useTheme,
+} from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import backgroundImage from "../../assets/login/background-image.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import playerService from "../../services/players.service";
 import { AuthContext } from "../../context/auth.context";
+import { leftArrow } from "../../utils/icons";
 
 export default function Login() {
   const [data, setData] = useState({});
   const navigate = useNavigate();
+  const theme = useTheme();
   const { authenticate, storeToken } = useContext(AuthContext);
   const handleChange = (e) => {
     setData({
@@ -31,7 +46,7 @@ export default function Login() {
     <Box
       height={"100vh"}
       width={"full"}
-      background={`linear-gradient(0deg, #02735BB2, #02735BB2),url(${backgroundImage})`}
+      background={`linear-gradient(0deg, ${theme.colors.main.golfieGreenOpacity}, ${theme.colors.main.golfieGreenOpacity}),url(${backgroundImage})`}
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
       backgroundSize="cover"
@@ -40,45 +55,57 @@ export default function Login() {
     >
       <Flex width={"full"} height={"full"} flexDirection={"column"} pl={"5%"} pr={"5%"}>
         <Box>
-          <Flex alignItems={"flex-end"}>
-            <ArrowBackIcon boxSize={5} m={"5px"} color={"#FAFAFA"} />
-            <Text color={"#FAFAFA"} fontSize={"md"} m={"5px"}>
+          <Flex alignItems={"center"} pb={"12px"}>
+            <Link to="/welcome">
+              <Icon as={leftArrow} stroke={"main.whiteBall"} h={"24px"} w={"24px"} mr={"8px"} />
+            </Link>
+            <Text fontFamily={"Lora"} fontSize={"22px"} color={"main.whiteBall"}>
               Log in
             </Text>
           </Flex>
 
-          <Heading as={"h1"} size="3xl" color={"#FAFAFA"} pt={"24px"}>
-            Encatados de verte de nuevo.
+          <Heading fontSize={"36px"} fontWeight={500} color={"main.whiteBall"} pt={"20px"}>
+            Encantados de
+            <br /> verte de nuevo.
           </Heading>
         </Box>
         <Spacer />
         <Box>
           <Box as="form" onSubmit={handleSubmit}>
             <FormControl>
-              <FormLabel color={"#FAFAFA"}>Usuario</FormLabel>
-              <Input backgroundColor={"#FAFAFA"} type="email" name="email" value={data.email} onChange={handleChange} />
+              <FormLabel color={"main.whiteBall"}>
+                {" "}
+                <Text textStyle={"psr"}>Usuario</Text>
+              </FormLabel>
+              <Input
+                backgroundColor={"main.whiteBall"}
+                type="email"
+                name="email"
+                placeholder="Escriba aquí su email"
+                value={data.email}
+                onChange={handleChange}
+              />
             </FormControl>
             <FormControl mt={"16px"}>
-              <FormLabel color={"#FAFAFA"}>Contraseña</FormLabel>
+              <FormLabel color={"main.whiteBall"}>
+                <Text textStyle={"psr"}>Contraseña</Text>
+              </FormLabel>
               <Input
-                backgroundColor={"#FAFAFA"}
+                backgroundColor={"main.whiteBall"}
                 type="password"
                 name="password"
+                placeholder="Escriba aquí su contraseña"
                 value={data.password}
                 onChange={handleChange}
               />
             </FormControl>
 
             <Button type="submit" w={"full"} mt={"40px"}>
-              Log in
+              <Text textStyle={"pmb"} color={"main.golfieGreen"}>
+                Log in
+              </Text>
             </Button>
           </Box>
-
-          <Link>
-            <Text textAlign={"center"} color={"#FAFAFA"}>
-              No recuerdo mi contraseña
-            </Text>
-          </Link>
         </Box>
       </Flex>
     </Box>

@@ -11,6 +11,74 @@ export const leftArrow = createIcon({
   ),
 });
 
+export const pointer = createIcon({
+  displayName: "pointer",
+  viewBox: "0 0 16 17",
+  path: (
+    <g stroke="#02735B" stroke-width="1.5" fill="none">
+      <path d="M8 9.453a2.08 2.08 0 1 0 0-4.16 2.08 2.08 0 0 0 0 4.16Z" />
+      <path d="M2.413 6.16C3.727.387 12.28.393 13.587 6.167c.766 3.386-1.34 6.253-3.187 8.026a3.462 3.462 0 0 1-4.807 0c-1.84-1.773-3.946-4.646-3.18-8.033Z" />
+    </g>
+  ),
+});
+
+export const player = createIcon({
+  displayName: "player",
+  viewBox: "0 0 17 17",
+  path: (
+    <g stroke="#02735B" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill="none">
+      <path d="M8.5 8.5a3.333 3.333 0 1 0 0-6.667 3.333 3.333 0 0 0 0 6.667Z" />
+      <path d="M14.227 15.167c0-2.58-2.567-4.667-5.727-4.667s-5.727 2.087-5.727 4.667" />
+    </g>
+  ),
+});
+
+export const calendar = createIcon({
+  displayName: "calendar",
+  viewBox: "0 0 16 16",
+  path: (
+    <g stroke="#262223" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path stroke-miterlimit="10" stroke-width="1.5" d="M5.333 1.333v2" />
+      <path stroke-miterlimit="10" stroke-width="1.5" d="M10.667 1.333v2" />
+      <path stroke-miterlimit="10" stroke-width="1.5" d="M2.333 6.06h11.334" />
+      <path
+        stroke-miterlimit="10"
+        stroke-width="1.5"
+        d="M14 5.667v5.667c0 2-1 3.333-3.333 3.333H5.333C3 14.667 2 13.334 2 11.334V5.667c0-2 1-3.333 3.333-3.333h5.334C13 2.333 14 3.667 14 5.667Z"
+      />
+      <path stroke-width="2" d="M10.463 9.133h.006" />
+      <path stroke-width="2" d="M10.463 11.133h.006" />
+      <path stroke-width="2" d="M7.997 9.133h.006" />
+      <path stroke-width="2" d="M7.997 11.133h.006" />
+      <path stroke-width="2" d="M5.53 9.133h.006" />
+      <path stroke-width="2" d="M5.53 11.133h.006" />
+    </g>
+  ),
+});
+
+export const clock = createIcon({
+  displayName: "clock",
+  viewBox: "0 0 16 16",
+  path: (
+    <g stroke="#262223" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill="none">
+      <path d="M14.667 8A6.669 6.669 0 0 1 8 14.667 6.67 6.67 0 0 1 1.333 8 6.67 6.67 0 0 1 8 1.333 6.669 6.669 0 0 1 14.667 8Z" />
+      <path d="M10.473 10.12 8.407 8.887c-.36-.213-.654-.727-.654-1.147V5.007" />
+    </g>
+  ),
+});
+
+export const holes = createIcon({
+  displayName: "holes",
+  viewBox: "0 0 16 16",
+  path: (
+    <g stroke="#262223" stroke-width="1.5" fill="none">
+      <ellipse cx="7.667" cy="13.256" rx="5" ry="1.154" />
+      <path d="M5.744 12.103v-9.23" />
+      <path d="M10.056 3.182 6.44 1.632a.5.5 0 0 0-.697.46v3.857L10.056 4.1a.5.5 0 0 0 0-.92Z" />
+    </g>
+  ),
+});
+
 export const amistoso = createIcon({
   displayName: "amistoso",
   viewBox: "0 0 90 132",

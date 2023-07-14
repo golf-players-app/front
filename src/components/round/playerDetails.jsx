@@ -16,7 +16,6 @@ export default function PlayerDetails({ players }) {
     };
     getPlayers();
   }, []);
-  console.log(playerDetails);
 
   const renderPlayer = () => {
     for (let i = 0; i < 4; i++) {

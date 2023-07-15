@@ -66,10 +66,10 @@ function SecondPage() {
           <RadioGroup>
             <Stack>
               <Flex justifyContent={"space-around"}>
-                <Radio value="Female" {...register("gender")}>
+                <Radio value="Female" colorScheme="green" {...register("gender")}>
                   <Text textStyle={"pmr"}>♀️ Femenino</Text>
                 </Radio>
-                <Radio value="Male" {...register("gender")}>
+                <Radio value="Male" colorScheme="green" {...register("gender")}>
                   <Text textStyle={"pmr"}>♂️ Masculino</Text>
                 </Radio>
               </Flex>

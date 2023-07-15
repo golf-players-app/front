@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import clubService from "../../services/clubs.service";
 import playerService from "../../services/players.service";
-import { Box, Button, Checkbox, FormControl, Stack, Text } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
-
+import { Box, Button, Checkbox, Flex, FormControl, Heading, Spacer, Stack, Text, Image, Icon } from "@chakra-ui/react";
+import { useNavigate, useParams } from "react-router-dom";
+import { emptyClub } from "../../utils/icons";
 export default function SelectClub() {
   const { id } = useParams();
   const [clubs, setClubs] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getData = async () => {
@@ -38,6 +39,7 @@ export default function SelectClub() {
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       const trueClubs = [];
       clubs.forEach((club) => {
@@ -46,6 +48,7 @@ export default function SelectClub() {
         }
       });
       await playerService.update(id, { clubs: trueClubs });
+      navigate(`/welcome`);
     } catch (error) {
       console.log(error);
     }
@@ -55,12 +58,29 @@ export default function SelectClub() {
     return clubs.map((club) => (
       <div key={club._id}>
         {club.value ? (
-          <Checkbox name={club.name} id={club._id} value={club.value} onChange={handleChange} defaultChecked>
-            {club.name}
+          <Checkbox
+            name={club.name}
+            id={club._id}
+            value={club.value}
+            onChange={handleChange}
+            colorScheme="green"
+            defaultChecked
+          >
+            <Flex gap={2} p={"8px"} alignItems={"center"}>
+              <Icon as={emptyClub} w={"24px"} h={"24px"} />
+              <Text fontFamily={"Lora"} fontSize={"16px"}>
+                {club.name}
+              </Text>
+            </Flex>
           </Checkbox>
         ) : (
           <Checkbox name={club.name} id={club._id} value={club.value} onChange={handleChange}>
-            {club.name}
+            <Flex gap={2} p={"8px"} alignItems={"center"}>
+              <Icon as={emptyClub} w={"24px"} h={"24px"} />
+              <Text fontFamily={"Lora"} fontSize={"16px"}>
+                {club.name}
+              </Text>
+            </Flex>
           </Checkbox>
         )}
       </div>
@@ -68,11 +88,23 @@ export default function SelectClub() {
   };
 
   return (
-    <Box as="form" onSubmit={handleSubmit}>
-      <FormControl>{renderClubs()}</FormControl>
-      <Stack>
-        <Button type="submit">Submit</Button>
-      </Stack>
+    <Box as="form" onSubmit={handleSubmit} height={"100vh"} width={"full"} pt={"24px"} pb={"24px"}>
+      <Flex width={"full"} height={"full"} flexDirection={"column"} pl={"5%"} pr={"5%"}>
+        <Heading fontSize={"28px"} fontWeight={500} color={"main.golfieGreen"} pb={"12px"}>
+          Elige tu club o clubes
+        </Heading>
+        <Box maxH={"100vh"} overflowY="scroll">
+          <FormControl>{renderClubs()}</FormControl>
+        </Box>
+        <Spacer />
+        <Stack>
+          <Button type="submit" w={"full"} mt={"16px"} backgroundColor={"main.golfieGreen"}>
+            <Text textStyle={"pmb"} color={"main.whiteBall"}>
+              Submit
+            </Text>
+          </Button>
+        </Stack>
+      </Flex>
     </Box>
   );
 }

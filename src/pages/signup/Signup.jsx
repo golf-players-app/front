@@ -13,9 +13,10 @@ export default function Signup() {
   const navigate = useNavigate();
 
   const handleSubmit = async (player) => {
+    player.preventDefault();
     try {
       const newPlayer = await playerService.create(player);
-      navigate(`/welcome`);
+      navigate(`/select-club/${newPlayer.data._id}`);
     } catch (error) {
       console.log(error);
     }

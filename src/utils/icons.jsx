@@ -22,6 +22,17 @@ export const pointer = createIcon({
   ),
 });
 
+export const emptyClub = createIcon({
+  displayName: "emptyClub",
+  viewBox: "0 0 24 24",
+  path: (
+    <g stroke="#262223" stroke-width="1.5" fill="none">
+      <path d="M4.297 8.785A3.51 3.51 0 0 1 7.797 5h8.406a3.51 3.51 0 0 1 3.5 3.785l-.515 6.569a7.21 7.21 0 0 1-14.376 0l-.515-6.569Z" />
+      <path stroke-linecap="round" d="M6 2h12" />
+    </g>
+  ),
+});
+
 export const player = createIcon({
   displayName: "player",
   viewBox: "0 0 17 17",

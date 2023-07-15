@@ -16,7 +16,6 @@ import {
 } from "@chakra-ui/react";
 import { usePlayerForm } from "../../pages/signup/usePlayerForm";
 import { useWizard } from "react-use-wizard";
-import Amistoso from "../../assets/signup/amistoso.png";
 import { leftArrow, amistoso, competitivo, ambos } from "../../utils/icons";
 
 export default function FivePage() {
@@ -94,7 +93,7 @@ export default function FivePage() {
         <Stack>
           <Button type="submit" w={"full"} mt={"16px"} backgroundColor={"main.golfieGreen"}>
             <Text textStyle={"pmb"} color={"main.whiteBall"}>
-              Submit
+              Continuar
             </Text>
           </Button>
         </Stack>

@@ -100,7 +100,7 @@ export default function SelectClub() {
         <Stack>
           <Button type="submit" w={"full"} mt={"16px"} backgroundColor={"main.golfieGreen"}>
             <Text textStyle={"pmb"} color={"main.whiteBall"}>
-              Submit
+              Finalizar
             </Text>
           </Button>
         </Stack>

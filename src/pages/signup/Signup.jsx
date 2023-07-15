@@ -16,7 +16,7 @@ export default function Signup() {
     player.preventDefault();
     try {
       const newPlayer = await playerService.create(player);
-      navigate(`/select-club/${newPlayer.data._id}`);
+      navigate(`/upload-image/${newPlayer.data._id}`);
     } catch (error) {
       console.log(error);
     }
@@ -27,7 +27,7 @@ export default function Signup() {
       <Wizard>
         <FirstPage />
         <SecondPage />
-        <ThirdPage />
+        {/* <ThirdPage /> */}
         <FourPage />
         <FivePage />
       </Wizard>

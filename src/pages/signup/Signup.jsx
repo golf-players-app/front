@@ -13,7 +13,6 @@ export default function Signup() {
   const navigate = useNavigate();
 
   const handleSubmit = async (player) => {
-    player.preventDefault();
     try {
       const newPlayer = await playerService.create(player);
       navigate(`/upload-image/${newPlayer.data._id}`);

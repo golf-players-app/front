@@ -11,6 +11,63 @@ export const leftArrow = createIcon({
   ),
 });
 
+export const people = createIcon({
+  displayName: "people",
+  viewBox: "0 0 24 24",
+  path: (
+    <g stroke="#FAFAFA" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill="none">
+      <path d="M18 7.16a.605.605 0 0 0-.19 0 2.573 2.573 0 0 1-2.48-2.58c0-1.43 1.15-2.58 2.58-2.58a2.58 2.58 0 0 1 2.58 2.58A2.589 2.589 0 0 1 18 7.16Z" />
+      <path d="M16.97 14.44c1.37.23 2.88-.01 3.94-.72 1.41-.94 1.41-2.48 0-3.42-1.07-.71-2.6-.95-3.97-.71" />
+      <path d="M5.97 7.16c.06-.01.13-.01.19 0a2.573 2.573 0 0 0 2.48-2.58C8.64 3.15 7.49 2 6.06 2a2.58 2.58 0 0 0-2.58 2.58c.01 1.4 1.11 2.53 2.49 2.58Z" />
+      <path d="M7 14.44c-1.37.23-2.88-.01-3.94-.72-1.41-.94-1.41-2.48 0-3.42 1.07-.71 2.6-.95 3.97-.71" />
+      <path d="M12 14.63a.605.605 0 0 0-.19 0 2.573 2.573 0 0 1-2.48-2.58c0-1.43 1.15-2.58 2.58-2.58a2.58 2.58 0 0 1 2.58 2.58c-.01 1.4-1.11 2.54-2.49 2.58Z" />
+      <path d="M9.09 17.78c-1.41.94-1.41 2.48 0 3.42 1.6 1.07 4.22 1.07 5.82 0 1.41-.94 1.41-2.48 0-3.42-1.59-1.06-4.22-1.06-5.82 0Z" />
+    </g>
+  ),
+});
+
+export const play = createIcon({
+  displayName: "play",
+  viewBox: "0 0 24 24",
+  path: (
+    <g stroke="#FAFAFA" fill="none">
+      <circle cx="12" cy="8.802" r="6" stroke-width="1.5" />
+      <path
+        stroke-linecap="round"
+        stroke-width="1.5"
+        d="M21 16h-3.606c-.574 0-1.135.17-1.613.487v0a5.099 5.099 0 0 0-2.276 4.246v1.017a.25.25 0 0 1-.25.25h-2.51a.25.25 0 0 1-.25-.25v-1.017a5.099 5.099 0 0 0-2.276-4.246v0A2.914 2.914 0 0 0 6.606 16H3"
+      />
+      <circle cx="10" cy="7" r=".5" />
+      <circle cx="13" cy="9" r=".5" />
+      <circle cx="13" cy="6" r=".5" />
+    </g>
+  ),
+});
+
+export const game = createIcon({
+  displayName: "game",
+  viewBox: "0 0 24 24",
+  path: (
+    <g stroke="#FAFAFA" stroke-width="1.5" fill="none">
+      <ellipse cx="11.5" cy="19.885" rx="7.5" ry="1.731" />
+      <path d="M8.615 18.154V4.308" />
+      <path d="M15.62 5.002 9.312 2.299a.5.5 0 0 0-.697.46v6.164l7.005-3.002a.5.5 0 0 0 0-.919Z" />
+    </g>
+  ),
+});
+
+export const profileCircle = createIcon({
+  displayName: "profileCircle",
+  viewBox: "0 0 24 24",
+  path: (
+    <g stroke="#FAFAFA" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" fill="none">
+      <path d="M12.12 12.78a.963.963 0 0 0-.24 0 3.269 3.269 0 0 1-3.16-3.27c0-1.81 1.46-3.28 3.28-3.28a3.276 3.276 0 0 1 .12 6.55Z" />
+      <path d="M18.74 19.38A9.934 9.934 0 0 1 12 22c-2.6 0-4.96-.99-6.74-2.62.1-.94.7-1.86 1.77-2.58 2.74-1.82 7.22-1.82 9.94 0 1.07.72 1.67 1.64 1.77 2.58Z" />
+      <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z" />
+    </g>
+  ),
+});
+
 export const pointer = createIcon({
   displayName: "pointer",
   viewBox: "0 0 16 17",

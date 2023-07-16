@@ -21,6 +21,10 @@ class RoundService {
     return this.api.get("/");
   }
 
+  getPlayerRounds() {
+    return this.api.get("/player/rounds");
+  }
+
   addPlayer(id) {
     return this.api.post(`/player/${id}`);
   }

@@ -3,11 +3,11 @@ import { Route, Routes } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 import Onboarding from "./pages/onboarding/Onboarding";
 import Login from "./pages/login/Login";
-import Welcome from "./pages/welcome/welcome";
+import Welcome from "./pages/welcome/Welcome";
 import Signup from "./pages/signup/Signup";
 import SelectClub from "./pages/signup/SelectClub";
 import Federation from "./pages/federation/Federation";
-import Round from "./pages/round/round";
+import Round from "./pages/round/Round";
 import UploadProfile from "./pages/signup/UploadProfile";
 import MyRounds from "./pages/my-rounds/MyRounds";
 

@@ -14,10 +14,10 @@ export default function MyRounds() {
       setRounds(resRounds.data[0]);
     };
     getRounds();
+    console.log(rounds);
   }, []);
 
   const renderCourses = () => {
-    console.log(rounds);
     return rounds.map((round) => (
       <Box mb={"72px"}>
         <div key={round._id}>

@@ -14,7 +14,6 @@ export default function MyRounds() {
       setRounds(resRounds.data[0]);
     };
     getRounds();
-    console.log(rounds);
   }, []);
 
   const renderCourses = () => {

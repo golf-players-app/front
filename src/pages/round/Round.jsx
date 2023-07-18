@@ -5,11 +5,11 @@ import { player } from "../../utils/icons";
 
 import { Box, Center, Spinner, Text, Button, Flex, Icon, Spacer } from "@chakra-ui/react";
 import Navbar from "../../components/navbar/navbar";
-import { useNavigate } from "@reach/router";
+import { useNavigate } from "react-router-dom";
 
 export default function Round() {
   const [rounds, setRounds] = useState();
-  const navigate = useNavigate();
+  const navigate = useNavigate;
 
   useEffect(() => {
     const getRounds = async () => {

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Round() {
   const [rounds, setRounds] = useState();
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getRounds = async () => {
@@ -20,8 +20,13 @@ export default function Round() {
   }, []);
 
   const handleClick = async (id) => {
-    await roundService.addPlayer(id);
-    navigate(`/my-rounds`);
+    try {
+      await roundService.addPlayer(id);
+
+      navigate("/my-rounds");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const renderCourses = () => {

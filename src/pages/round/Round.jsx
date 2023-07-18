@@ -5,9 +5,11 @@ import { player } from "../../utils/icons";
 
 import { Box, Center, Spinner, Text, Button, Flex, Icon, Spacer } from "@chakra-ui/react";
 import Navbar from "../../components/navbar/navbar";
+import { useNavigate } from "@reach/router";
 
 export default function Round() {
   const [rounds, setRounds] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getRounds = async () => {
@@ -19,6 +21,7 @@ export default function Round() {
 
   const handleClick = async (id) => {
     await roundService.addPlayer(id);
+    navigate(`/my-rounds`);
   };
 
   const renderCourses = () => {

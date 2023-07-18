@@ -17,6 +17,7 @@ export default function MyRounds() {
   }, []);
 
   const renderCourses = () => {
+    console.log(rounds);
     return rounds.map((round) => (
       <Box mb={"72px"}>
         <div key={round._id}>
